@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BiGR</title>
+  <!-- <link rel="icon" type="assets/png" href="" /> -->
+  <!-- <link rel="canonical" href="" /> -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-71Y5XX2NRF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-97476543-1');
+    </script>
+
+  <!-- Meta tags -->
+  <meta name="keywords" content="BiGR, generative models, image generation, visual representations, representation learning">
+  <meta property="og:site_name" content="BiGR">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="BiGR: Harnessing Binary Latent Codes for Image Generation and Improved Visual Representation Capabilities">
+  <meta name="description" content="A novel conditional image generation model that unifies generative and discriminative tasks effectively.">
+  <meta property="og:description" content="A novel conditional image generation model that unifies generative and discriminative tasks effectively.">
+
+  <!-- <meta property="og:image" content="">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="300">
+  <meta property="og:image:height" content="300"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script type="text/javascript" src="./static/slick/slick.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <!-- Authors, institutions and links -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-3 publication-title"><span class="method-name">BiGR</span>: Harnessing Binary Latent Codes for <span class="color-gen">Image Generation</span> and Improved <span class="color-rep">Visual Representation</span> Capabilities
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://haoosz.github.io/">Shaozhe Hao</a><sup>1</sup>,
+              </span>
+              <span class="author-block"></span>
+                <a href="https://openreview.net/profile?id=~Xuantong_LIU1">Xuantong Liu</a><sup>2</sup>,
+              </span>
+              <span class="author-block"></span>
+                <a href="https://scholar.google.com/citations?user=odjSydQAAAAJ&hl=en">Xianbiao Qi</a><sup>3</sup>*,
+              </span>
+              <span class="author-block">
+                <a href="https://shihaozhaozsh.github.io/">Shihao Zhao</a><sup>1</sup>,
+              </span>
+              <span class="author-block"></span>
+                <a href="https://zibojia.github.io/">Bojia Zi</a><sup>4</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=Zb5wT08AAAAJ&hl=en">Rong Xiao</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.kaihan.org/">Kai Han</a><sup>1</sup>&dagger;,
+              </span>
+              <span class="author-block">
+                <a href="https://i.cs.hku.hk/~kykwong/">Kwan-Yee K. Wong</a><sup>1</sup>&dagger;
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The University of Hong Kong</span> &nbsp;
+              <span class="author-block"><sup>2</sup>Hong Kong University of Science and Technology</span> &nbsp;
+              <br>
+              <span class="author-block"><sup>3</sup>Intellifusion</span> &nbsp;
+              <span class="author-block"><sup>4</sup>The Chinese University of Hong Kong</span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block">*Project lead &nbsp; &nbsp; &dagger;Corresponding authors</span>
+            </div>
+            
+            <!-- <div class="venue">
+              <strong><font size="5" color="SteelBlue">arXiv</font></strong>
+            </div> -->
+
+            <!-- <div>
+              <p style="font-size:23px;font-weight:bold;padding-top: 5px;"></p>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>PDF</span>
+                  </a>
+                </span>
+
+                <!-- arXiv Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div id="teaser" class="has-text-centered">
+          <img style="width: 100%;" src="./asset/teaser.png" alt="ConceptExpress teaser.">
+          <!-- <video id="teaser" autoplay muted loop playsinline width="100%">
+            <source src="./static/src/teaser.mp4"
+                    type="video/mp4">
+          </video> -->
+        </div>
+
+        <!-- <video id="teaser" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+          <source src="static/videos/SpaText_Teaser.mp4" type="video/mp4">
+        </video> -->
+
+        <h2 class="subtitle has-text-centered">
+          <p>
+          <strong>TL;DR</strong>: 
+          We introduce <strong><span class="method-name">BiGR</span></strong>, a novel conditional image generation model using compact binary latent codes for generative training, 
+          focusing on enhancing <span class="highlight">both generative and representation capabilities</span>.
+          </p>
+        </h2>
+        <div style="text-align: center; font-size: 22px;">
+          <p><strong><span class="method-name">BiGR</span> can perform visual generation, discrimination, editting and more.</strong></p>
+          </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Abstract. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Advantages of <span class="method-name">BiGR</span></h2>
+          <div class="content has-text-justified">
+            <p>
+              <ul>
+                <li>
+                  <strong>Uniformity</strong>: <span class="method-name">BiGR</span> is the first conditional image generation model that unifies generative and discriminative tasks within the same model.
+                   By modeling compact binary latent codes, <span class="method-name">BiGR</span> delivers strong performance in both tasks compared to existing models.
+                </li>
+                <li>
+                  <strong>Efficiency</strong>: <span class="method-name">BiGR</span> generates images at a low time cost, 
+                  attributed to the small number of sampling steps required in the iterative unmasking process, while still maintaining high generation quality.
+                </li>
+                <li>
+                  <strong>Flexibility</strong>: <span class="method-name">BiGR</span> can be flexibly employed for various vision applications, such as inpainting, outpainting, editing, interpolation, and enrichment in a zero-shot manner, 
+                  without the need for task-specific structural changes or parameter fine-tuning.
+                </li>
+                <li>
+                  <strong>Scalability</strong>: <span class="method-name">BiGR</span> demonstrates scalability in both generative and discriminative tasks, 
+                  as evidenced by comprehensive evaluations of generation quality and linear-probe performance.
+                </li>
+                </ul>
+                </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paper video. -->
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <div class="content has-text-justified">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-3">Video</h2>
+                <div class="publication-video">
+                  <iframe src="" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Method explanation -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h2 class="title is-3">Method</h2>
+
+          <div class="content has-text-justified">
+
+            <div class="container" style="text-align: center;">
+              <img width="100%" src="./asset/overview.png"/>
+              <br />
+            </div>
+
+            <p>
+            <span class="method-name">BiGR</span> is built upon Llama backbone, 
+            incorporating <span class="highlight">mask-token prediction</span> and <span class="highlight">binary transcoder</span>.
+            <span class="method-name">BiGR</span> is trained with a weighted binary cross-entropy (wBCE) loss for reconstructing masked tokens.
+            For image generation, we design <span class="highlight">entropy-order sampling</span>.
+            For visual representation, we simply apply average pooling in the intermediate layers.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>     
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h2 class="title is-3">Results</h2>
+          <!-- Quantitative results -->
+          <br>
+          <h3 class="title is-4">Quantitative Comparison</h3>
+          <div class="content has-text-justified">
+            <div class="container" style="text-align: center;">
+              <img width="100%" src="./asset/results.png"/>
+              <br />
+            </div>
+          </div>
+          <!-- Generation examples -->
+          <br>
+          <h3 class="title is-4">Image Generation</h3>
+          <div class="content has-text-justified">
+            <div class="container" style="text-align: center;">
+              <img width="100%" src="./asset/generate.png"/>
+              <br />
+            </div>
+          </div>
+          <!-- Application examples -->
+          <br>
+          <h3 class="title is-4">Zero-shot Generalized Applications</h3>
+          <div class="content has-text-justified">
+            <div class="container" style="text-align: center;">
+              <img width="100%" src="./asset/apps.png"/>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div style="text-align: center; font-size: 22px;">
+      <p><strong>Try out <span class="method-name">BiGR</span> yourself at <a href="https://haoosz.github.io/">here</a>!</strong></p>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p>If you find this project useful for your research, please cite the following:</p>
+<pre align="left"><code>
+</code></pre>
+    </div>
+  </section>
+
+</body>
+
+</html>
